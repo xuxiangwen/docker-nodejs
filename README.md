@@ -1,18 +1,17 @@
 it's a simple nodejs sample from https://nodejs.org/en/docs/guides/nodejs-docker-webapp/.
 
-**clone**
-
+**clone**  
 *git clone git@github.com:xuxiangwen/docker-nodejs.git*  
 *cd docker-nodejs*
 
-**build image** 
+**build image**  
 *docker build -t xxw/node-web-app .*
 
-**run** 
+**run**  
 *docker run --name node-web-app  -p 3000:3000 --rm  xxw/node-web-app*
 
-**check file in docker** 
+**check file in docker**  
 *docker exec -it  node-web-app bash*
 
-**test** 
+**test**  
 *curl -i localhost:3000*
