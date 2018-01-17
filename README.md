@@ -10,7 +10,7 @@ it's a simple nodejs sample from https://nodejs.org/en/docs/guides/nodejs-docker
 **run**  
 *docker run --name node-web-app  -p 3000:3000 --rm  xxw/node-web-app*
 
-**check file in docker**  
+**go into the container**  
 *docker exec -it  node-web-app bash*
 
 **test**  
