@@ -11,4 +11,4 @@ it's a simple nodejs sample from https://nodejs.org/en/docs/guides/nodejs-docker
 
 **run**
 
-*docker run -p 3000:3000 --rm  xxw/node-web-app*
+*docker run --name node-web-app  -p 3000:3000 --rm  xxw/node-web-app*
