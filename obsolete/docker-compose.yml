@@ -7,7 +7,7 @@ services:
     environment:
       - NODE_ENV=production
     volumes:
-      - ./:/home/node/app
+      - ./:/home/node/app    
     expose:
       - "8081"
     command: "npm start"
