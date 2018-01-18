@@ -2,7 +2,7 @@ it's a simple nodejs sample from https://nodejs.org/en/docs/guides/nodejs-docker
 
 **clone**  
 *git clone git@github.com:xuxiangwen/docker-nodejs.git*  
-*cd docker-nodejs*
+*cd docker-nodejs/docker_web_app*
 
 **build image**  
 *docker build -t xxw/node-web-app .*

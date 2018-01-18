@@ -1,0 +1,17 @@
+[
+  {
+    "username": "grid",
+    "name": "grid",
+    "email": "eipi10@qq.com",
+    "password": "$2a$10$bXY8i4BPIoYUpynZ42j96.LXM1QMBReCdKFdmN.9I3lXj1R8Pl0Gq",
+    "role": {
+      "workflow": "admin",
+      "name": "Admin"
+    },
+    "id": 1,
+    "actif": 1,
+    "avatar": "//www.gravatar.com/avatar/c64b0e7ba80edd207969c5796094f3e0.jpg?s=200",
+    "resetPasswordToken": "8dd10239ba4e9c3303e7583bbb962b25b2eb35e6",
+    "resetPasswordExpires": null
+  }
+]
