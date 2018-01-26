@@ -1,0 +1,17 @@
+{
+  "users": {
+    "enable": false
+  },
+  "elasticsearch": {
+    "active": "true",
+    "host": "127.0.0.1",
+    "port": "9200",
+    "index": "robot",
+    "templates": [
+      "single"
+    ]
+  },
+  "plugins": [
+    "abecms/abe-elasticsearch"
+  ]
+}

@@ -1,0 +1,6 @@
+*.swp
+*.pyc
+.env/*
+elasticsearch/data/*
+node_modules/*
+.idea/*
