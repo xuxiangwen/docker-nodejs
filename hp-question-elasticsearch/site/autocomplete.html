@@ -1,0 +1,69 @@
+
+<html>
+<head>
+    <title>Demo: autocomplete</title>
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" type="css">-->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body>
+<script>
+    $(function() {
+        $.ui.autocomplete.prototype._renderItem = function (ul, item) {
+            return $("<li></li>")
+                .data("item.autocomplete", item)
+                .append("<a>" + item.label + "</a>")
+                .appendTo(ul);
+        };
+
+        $("#keyword").autocomplete({
+            source: function(request, response) {
+                var postData = {
+                    "query": {
+                        "query_string": {
+                            "fields": ["question"],
+                            "query": request.term.toLowerCase()
+                        }
+                    },
+                    "highlight" : {
+                        "pre_tags" : ["<strong>"],
+                        "post_tags" : ["</strong>"],
+                        "fields" : {
+                            "question" : {}
+                        }
+                    }
+                }
+                $.ajax({
+                    contentType:"application/json",
+                    url: "http://15.15.165.35:9200/robot3/_search",
+                    method: "POST",
+                    crossDomain: true,
+                    dataType: "JSON",
+                    data: JSON.stringify(postData),
+                    success: function(data) {
+                        response($.map(data.hits.hits, function(item) {
+                            return {
+                                label: item.highlight.question,
+                                id: item._id
+                            }
+                        }));
+                    },
+                });
+            }
+        })
+    });
+
+
+
+</script>
+
+
+<br>
+<div class="ui-widget">
+    <label for="keyword">Search</label>
+    <input id="keyword">
+</div>
+</body>
+</html>

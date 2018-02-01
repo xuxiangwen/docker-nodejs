@@ -1,0 +1,23 @@
+{
+  "name": "recipe-elasticsearch",
+  "version": "1.0.0",
+  "description": "This Abe recipe demonstrates how to setup abe-elasticsearch plugin and use it on the frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abecms/recipe-elasticsearch.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abecms/recipe-elasticsearch/issues"
+  },
+  "homepage": "https://github.com/abecms/recipe-elasticsearch#readme",
+  "dependencies": {
+    "abe-elasticsearch": "github:abecms/abe-elasticsearch"
+  }
+}

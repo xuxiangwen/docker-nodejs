@@ -1,0 +1,1 @@
+这是一个调用elasticsearch java script api的例子。可以在web url中做一些简单的数据操作
