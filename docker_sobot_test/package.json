@@ -1,0 +1,14 @@
+{
+  "name": "docker_sobot_test",
+  "version": "0.0.1",
+  "description": "Node.js on Docker",
+  "author": "First Last <chatbot@eipi10.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1",
+    "multer": "^1.0.5"
+  }
+}
