@@ -83,29 +83,22 @@ app.post('/ProName', (req, res) => {
     {
         case 'HP_Deskjet':
             var items = HP_Deskjet.filter(hasProName);
-            var json = getItemsJson(items, 'ProName');
-            res.json(json);
             break;
         case 'HP_Officejet':
             var items = HP_Officejet.filter(hasProName);
-            var json = getItemsJson(items, 'ProName');
-            res.json(json);
             break;
         case 'HP_Laserjet':
             var items = HP_Laserjet.filter(hasProName);
-            var json = getItemsJson(items, 'ProName');
-            res.json(json);
             break;
         case 'HP_PageWide':
             var items = HP_PageWide.filter(hasProName);
-            var json = getItemsJson(items, 'ProName');
-            res.json(json);
             break;
         default:
             var items = [];
-            var json = getItemsJson(items, 'ProName');
-            res.json(json);
     }
+    var json = getItemsJson(items, 'ProName');
+    log(json)
+    res.json(json);
 });
 
 app.listen(PORT, HOST);
