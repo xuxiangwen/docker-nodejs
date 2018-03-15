@@ -103,5 +103,17 @@ app.post('/ProName', (req, res) => {
     res.json(json);
 });
 
+app.post('/ProType', (req, res) => {
+    log(req.headers['content-type']);
+    log(util.inspect(url.parse(req.url, true)));
+    log(req.body);
+
+    var proModel = req.body.ProModel.replace(" ", "_");
+    var proName = proModel + ' ' + req.body.ProName;
+    var proType = req.body.ProType;
+
+    res.send(`${proName}, ${proType}`);
+});
+
 app.listen(PORT, HOST);
 log(`Running on http://${HOST}:${PORT}`);
