@@ -79,25 +79,27 @@ app.post('/ProName', (req, res) => {
         return item.indexOf(proName)>=0;
     }
 
+
+
     switch (proModel)
     {
         case 'HP_Deskjet':
-            var items = HP_Deskjet.filter(hasProName);
+            var items = HP_Deskjet.filter(hasProName).map(item =>  'HP Deskjet ' + item);
             break;
         case 'HP_Officejet':
-            var items = HP_Officejet.filter(hasProName);
+            var items = HP_Officejet.filter(hasProName).map(item =>  'HP Officejet ' + item);
             break;
         case 'HP_Laserjet':
-            var items = HP_Laserjet.filter(hasProName);
+            var items = HP_Laserjet.filter(hasProName).map(item =>  'HP Laserjet ' + item);
             break;
         case 'HP_PageWide':
-            var items = HP_PageWide.filter(hasProName);
+            var items = HP_PageWide.filter(hasProName).map(item =>  'HP PageWide ' + item);
             break;
         default:
             var items = [];
     }
     var json = getItemsJson(items, 'ProName');
-    log(json)
+    log(json);
     res.json(json);
 });
 
