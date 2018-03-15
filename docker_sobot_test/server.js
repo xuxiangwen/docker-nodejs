@@ -112,7 +112,9 @@ app.post('/ProType', (req, res) => {
     var proName = proModel + ' ' + req.body.ProName;
     var proType = req.body.ProType;
 
-    res.send(`${proName}, ${proType}`);
+    var json = getItemsJson([`${proName}, ${proType}`], 'ProTypeDoc');
+    log(json);
+    res.json(json);
 });
 
 app.listen(PORT, HOST);
