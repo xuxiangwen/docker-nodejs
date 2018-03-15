@@ -21,7 +21,9 @@ function getItemsJson(items, paramName) {
     return json
 }
 
-this.log = console.log.bind( console, new Date().toLocaleString() + ":" );
+function log(text) {
+    console.log(new Date().toLocaleString() + ": " + text );
+}
 
 // App
 const app = express();
@@ -34,19 +36,19 @@ app.get('/', (req, res) => {
 });
 
 app.get('/fault/ProModel', (req, res) => {
-    this.log(req.query.name);
-    this.log(req.query.tel);
+    log(req.query.name);
+    log(req.query.tel);
     var params = url.parse(req.url, true).query;
-    this.log(params.name, params.url, params);
+    log(params.name, params.url, params);
     //res.send('you are visiting '+ params +'\n');
     res.writeHead(200, {'Content-Type': 'text/plain; charset=utf-8'});
     res.end(util.inspect(url.parse(req.url, true)));
 });
 
 app.post('/ProModel', (req, res) => {
-    this.log(req.headers['content-type']);
-    this.log(util.inspect(url.parse(req.url, true)));
-    this.log(req.body);
+    log(req.headers['content-type']);
+    log(util.inspect(url.parse(req.url, true)));
+    log(req.body);
 
     var items = ['HP Deskjet', 'HP Officejet', 'HP Laserjet', 'HP PageWide'];
     var json = getItemsJson(items, 'ProModel')
@@ -55,9 +57,9 @@ app.post('/ProModel', (req, res) => {
 });
 
 app.post('/ProName', (req, res) => {
-    this.log(req.headers['content-type']);
-    this.log(util.inspect(url.parse(req.url, true)));
-    this.log(req.body);
+    log(req.headers['content-type']);
+    log(util.inspect(url.parse(req.url, true)));
+    log(req.body);
 
     var proModel = req.body.ProModel.replace(" ", "_")
     var proName = req.body.ProName
@@ -107,4 +109,4 @@ app.post('/ProName', (req, res) => {
 });
 
 app.listen(PORT, HOST);
-this.log(`Running on http://${HOST}:${PORT}`);
+log(`Running on http://${HOST}:${PORT}`);
