@@ -22,7 +22,7 @@ function getItemsJson(items, paramName) {
 }
 
 function log(text) {
-    console.log(new Date().toLocaleString() + ": " + text );
+    console.log(new Date().toLocaleString() + ":" , text );
 }
 
 // App
