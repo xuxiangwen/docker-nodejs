@@ -127,7 +127,7 @@ app.post('/driver', (req, res) => {
     var os = req.body.OS;
     var mail = req.body.mail;
 
-    var json = getItemsJson([`${proName} ${os} to ${mail}`], '');
+    var json = getItemsJson([`${proName} ${os} to ${mail}`], 'driver');
     log(json);
     res.json(json);
 });
