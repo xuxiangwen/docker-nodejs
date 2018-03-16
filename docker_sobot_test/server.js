@@ -109,7 +109,7 @@ app.post('/ProType', (req, res) => {
     log(req.body);
 
     var proModel = req.body.ProModel.replace(" ", "_");
-    var proName = proModel + ' ' + req.body.ProName;
+    var proName = req.body.ProName;
     var proType = req.body.ProType;
 
     var json = getItemsJson([`${proName}, ${proType}`], 'ProTypeDoc');
