@@ -117,5 +117,20 @@ app.post('/ProType', (req, res) => {
     res.json(json);
 });
 
+app.post('/driver', (req, res) => {
+    log(req.headers['content-type']);
+    log(util.inspect(url.parse(req.url, true)));
+    log(req.body);
+
+    var proModel = req.body.ProModel.replace(" ", "_");
+    var proName = req.body.ProName;
+    var os = req.body.OS;
+    var mail = req.body.mail;
+
+    var json = getItemsJson([`${proName} ${os} to ${mail}`], '');
+    log(json);
+    res.json(json);
+});
+
 app.listen(PORT, HOST);
 log(`Running on http://${HOST}:${PORT}`);
